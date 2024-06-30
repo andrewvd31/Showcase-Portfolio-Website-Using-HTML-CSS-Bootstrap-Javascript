@@ -1,0 +1,473 @@
+/*imp! CSS Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+/*imp! CSS Variable Declaration */
+
+:root{
+    --dark-black: #030303;
+    --pure-white: #ffffff;
+    --sky-blue: #0D6EFD;
+    --grey: #686868;
+    --h1-font: 7rem;
+    --h2-font: 3.2rem;
+    --h3-font: 2.8rem;
+    --h4-font: 2.4rem;
+    --font-20px: 2rem;
+    --h5-font: 1.8rem;
+    --p-font: 1.6rem;
+    --font-segoe-UI: 'Segoe UI';
+}
+
+/*imp! Body And Common CSS */
+
+body{
+    font-family: 'Poppins';
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0;
+}
+
+.dark-black{
+    background-color: var(--dark-black);
+}
+
+.dark-black-text{
+    color: var(--dark-black);
+}
+
+.fw-600{
+    font-weight: 600;
+}
+
+.grey-clr{
+    color: var(--grey);
+}
+
+h1{
+    font-size: var(--h1-font);
+}
+
+h2{
+    font-size: var(--h2-font);
+}
+
+h3{
+    font-size: var(--h3-font);
+}
+
+h4{
+    font-size: var(--h4-font);
+}
+
+h5{
+    font-size: var(--h5-font);
+}
+
+p,.p-font-size{
+    font-size: var(--p-font);
+}
+
+.segoe-font{
+    font-family: var(--font-segoe-UI);
+}
+
+.mt-100{
+    margin-top: 10rem;
+}
+
+/*imp! Section-1 (Navbar Section) */
+
+.nav-link{
+    position: relative;
+    font-size: var(--p-font);
+    padding: 1rem 0.2rem !important;
+}
+
+.nav-link::before{
+    content: '';
+    width: 0;
+    height: 0.15rem;
+    background-color: var(--pure-white);
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.nav-link:hover::before, .nav-link.active::before{
+    width: 100%;
+    visibility: visible;
+}
+
+.navbar-toggler .fa-solid.fa-bars{
+    font-size: 2rem;
+}
+
+/*imp! Section-2 (Hero Section) */
+
+.hero-section{
+    background-image: url(../img/Hero-Section/Man-image.webp);
+    background-color: var(--dark-black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section-overlay{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9));
+    z-index: -1;
+}
+
+.hero-section .container{
+    height: 86vh;
+}
+
+/*imp! Section-3 (About Section) */
+
+.about-section{
+    padding: 5rem 0;
+}
+
+.about-section .container{
+    box-shadow: 0px 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+}
+
+.skills-main-div .skills-div span{
+    font-size: 1.3rem;
+}
+
+.about-section .about-me-description h3{
+    position: relative;
+    display: inline-block;
+}
+
+.about-section .about-me-description h3::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 0.25rem;
+    background-color: var(--sky-blue);
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    border-radius: 1rem;
+}
+
+.about-me-description p{
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.about-me-description .blue-line{
+    width: 7rem;
+}
+
+/*imp! Section-4 (Resume Section) */
+
+.blue-line{
+    width: 5rem;
+    height: 0.3rem;
+    background-color: var(--sky-blue);
+    border-radius: 1rem;
+    margin: 1.5rem auto;
+}
+
+.resume-item{
+    position: relative;
+    border-left: 0.2rem solid var(--sky-blue);
+}
+
+.resume-item::before{
+    content: "";
+    position: absolute;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 5rem;
+    left: -0.9rem;
+    top: 0;
+    background: var(--pure-white);
+    border: 0.2rem solid var(--sky-blue);
+}
+
+.resume-item:nth-of-type(3)::before{
+    top: 3.3rem;
+}
+
+.resume-item-1::before{
+    top: 3.5rem;
+}
+
+.resume-item .year{
+    font-size: var(--p-font);
+}
+
+/*imp! Section-5 (Services Section) */
+
+.service-item{
+    box-shadow: 0 0.5rem 9rem 0 color-mix(in srgb, var(--grey), transparent 90%);
+    padding: 6rem 3rem;
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 1.8rem;
+    border-bottom: 0.5rem solid var(--pure-white);
+    height: 100%;
+}
+
+.service-item .icon{
+    color: var(--pure-white);
+    background: var(--sky-blue);
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: var(--font-20px);
+}
+
+.service-item h4{
+    margin: 1rem 0 1.5rem 0;
+}
+
+.service-item:hover{
+    transform: translateY(-1rem);
+    border-color: var(--sky-blue);
+    cursor: pointer;
+}
+
+/*imp! Section-6 (Achievements Section) */
+
+.acheivement-section{
+    background: url(../img/Achievement-Section/3d-modern-office-interior.webp);
+    background-size: cover;
+    padding: 15rem;
+    position: relative;
+    z-index: 0;
+}
+
+.acheivement-section .overlay, .testimonial-section .overlay{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: color-mix(in srgb, var(--sky-blue), transparent 40%);
+    z-index: -1;
+}
+
+.acheivement-section span{
+    font-size: 4.5rem;
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+.acheivement-section .col-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*imp! Section-7 (Portfolio Section) */
+
+.project-div .row{
+    margin-bottom: 4rem;
+}
+
+/*imp! Section-8 (FAQ Section) */
+
+.accordion-button{
+    font-size: var(--p-font);
+}
+
+.accordion-button:hover{
+    color: var(--sky-blue);
+}
+
+.accordion-body p{
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.accordion-button:focus{
+    box-shadow: none !important;
+}
+
+/*imp! Section-9 (Contact Section) */
+
+form{
+    box-shadow: 0px 0px 20px color-mix(in srgb, var(--grey), transparent 75%);
+}
+
+input,textarea,.submit-btn{
+    font-size: var(--p-font) !important;
+}
+
+::placeholder{
+    opacity: 0.5 !important;
+}
+
+.contact-section textarea{
+    resize: none;
+}
+
+.submit-btn{
+    padding: 1rem 3rem;
+    background-color: var(--sky-blue);
+    color: var(--pure-white);
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+.submit-btn:hover{
+    background-color: var(--sky-blue);
+    color: var(--pure-white);
+    opacity: 1;
+}
+
+.thank-you-msg{
+    font-family: var(--font-segoe-UI);
+    display: none;
+}
+
+/*imp! Section-10 (Footer Section) */
+
+.footer-section{
+    background-color: var(--sky-blue);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons{
+    display: flex;
+    gap: 2rem;
+}
+
+.social-icons i{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1rem solid var(--pure-white);
+    border-radius: 100%;
+    font-size: 1.8rem;
+    color: var(--pure-white);
+    cursor: pointer;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.social-icons i:hover{
+    opacity: 1;
+}
+
+/*imp! Media Queries */
+
+/*imp! Tablet Screen */
+
+@media (max-width: 992px) {
+    /*imp! CSS Variable Declaration */
+    :root{
+        --h1-font: 5rem;
+        --h2-font: 3rem;
+    }
+
+    /*imp! Body And Common CSS */
+    .mt-100{
+        margin-top: 8rem;
+    }
+    
+    .mb-60{
+        margin-bottom: 6rem;
+    }
+
+    /*imp! Navbar CSS */
+    .nav-link:hover::before,.nav-link.active::before{
+        visibility: hidden;
+    }
+}
+
+/*imp! Mobile Screen */
+
+@media (max-width: 600px) {
+    /*imp! CSS Variable Declaration */
+    :root{
+        --h1-font: 3.5rem;
+        --h2-font: 2.2rem;
+        --h3-font: 2rem;
+    }
+
+    /*imp! Body And Common CSS */
+    .mt-100{
+        margin-top: 7rem;
+    }
+
+    .mb-60{
+        margin-bottom: 0;
+    }
+
+    .mb-35{
+        margin-bottom: 3.5rem;
+    }
+
+    .about-section{
+        padding: 0;
+    }
+
+    /*imp! Section-1 (Hero Section) */
+    .hero-section{
+        background-position-x: 0;
+    }
+
+    /*imp! Section-5 (Achievements Section) */
+    .acheivement-section{
+        padding: 5rem;
+    }
+
+    /*imp! Section-7 (FAQ Section) */
+    .accordion-button{
+        font-size: 1.4rem;
+    }
+
+    .accordion-body p{
+        font-size: 1.2rem;
+    }
+
+    /*imp! Section-9 (Footer Section) */
+    .footer-section{
+        padding: 3rem;
+    }
+
+    .copyright-txt{
+        font-size: 1.4rem;
+    }
+
+    .social-icons i{
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.4rem;
+    }
+}
