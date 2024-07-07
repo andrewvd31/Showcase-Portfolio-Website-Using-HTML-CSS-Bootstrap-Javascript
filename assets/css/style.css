@@ -86,28 +86,32 @@ p,.p-font-size{
     margin-top: 10rem;
 }
 
-/*imp! Section-1 (Navbar Section) */
+/* imp! Section-1 (Navbar Section) */
+
+.navbar{
+    z-index: 10 !important;
+}
 
 .nav-link{
-    position: relative;
     font-size: var(--p-font);
-    padding: 1rem 0.2rem !important;
+    padding: 1rem 0.2rem;
+    position: relative;
 }
 
 .nav-link::before{
     content: '';
+    position: absolute;
     width: 0;
     height: 0.15rem;
     background-color: var(--pure-white);
-    position: absolute;
     bottom: 0.2rem;
     left: 0;
     visibility: hidden;
-    transition: all 0.3s ease-in-out;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover::before, .nav-link.active::before{
+.nav-link:hover::before,.nav-link.active::before{
     width: 100%;
     visibility: visible;
 }
@@ -116,7 +120,7 @@ p,.p-font-size{
     font-size: 2rem;
 }
 
-/*imp! Section-2 (Hero Section) */
+/* imp! Section-2 (Hero-Section) */
 
 .hero-section{
     background-image: url(../img/Hero-Section/Man-image.webp);
@@ -124,7 +128,6 @@ p,.p-font-size{
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: -5rem;
-    position: relative;
     z-index: 1;
 }
 
@@ -133,7 +136,7 @@ p,.p-font-size{
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9));
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9));
     z-index: -1;
 }
 
@@ -141,14 +144,14 @@ p,.p-font-size{
     height: 86vh;
 }
 
-/*imp! Section-3 (About Section) */
+/* imp! Section-3 (About-Section) */
 
 .about-section{
     padding: 5rem 0;
 }
 
 .about-section .container{
-    box-shadow: 0px 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.1);
     padding: 3rem;
 }
 
@@ -156,24 +159,15 @@ p,.p-font-size{
     font-size: 1.3rem;
 }
 
-.about-me-description p{
-    font-size: 1.8rem;
-    line-height: 1.6;
-}
-
-.about-me-description .blue-line{
-    width: 7rem;
-}
-
 .blue-line{
     width: 5rem;
     height: 0.3rem;
     background-color: var(--sky-blue);
     border-radius: 1rem;
-    margin: 1.5rem auto;
+    margin: 1.5rem 0;
 }
 
-/*imp! Section-4 (Resume Section) */
+/* imp! Section-4 (Resume Section) */
 
 .resume-item{
     position: relative;
@@ -181,15 +175,15 @@ p,.p-font-size{
 }
 
 .resume-item::before{
-    content: "";
+    content: '';
     position: absolute;
     width: 1.6rem;
     height: 1.6rem;
     border-radius: 5rem;
-    left: -0.9rem;
-    top: 0;
-    background: var(--pure-white);
+    background-color: var(--pure-white);
     border: 0.2rem solid var(--sky-blue);
+    top: 0;
+    left: -0.9rem;
 }
 
 .resume-item:nth-of-type(3)::before{
@@ -204,15 +198,14 @@ p,.p-font-size{
     font-size: var(--p-font);
 }
 
-/*imp! Section-5 (Services Section) */
+/* imp! Section-5 (Services Section) */
 
 .service-item{
-    box-shadow: 0 0.5rem 9rem 0 color-mix(in srgb, var(--grey), transparent 90%);
     padding: 6rem 3rem;
-    transition: all 0.3s ease-in-out 0s;
-    border-radius: 1.8rem;
+    box-shadow: 0 0.5rem 9rem 0 color-mix(in srgb, var(--grey), transparent 90%);
     border-bottom: 0.5rem solid var(--pure-white);
-    height: 100%;
+    border-radius: 1.8rem;
+    transition: all 0.3s ease-in-out;
 }
 
 .service-item .icon{
@@ -222,14 +215,14 @@ p,.p-font-size{
     height: 6.4rem;
     border-radius: 5rem;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
     font-size: var(--font-20px);
 }
 
 .service-item h4{
-    margin: 1rem 0 1.5rem 0;
+    margin: 1rem 0 1.5rem;
 }
 
 .service-item:hover{
@@ -238,7 +231,7 @@ p,.p-font-size{
     cursor: pointer;
 }
 
-/*imp! Section-6 (Achievements Section) */
+/*imp! Section-6 (Achievement Section) */
 
 .acheivement-section{
     background: url(../img/Achievement-Section/3d-modern-office-interior.webp);
@@ -248,14 +241,14 @@ p,.p-font-size{
     z-index: 0;
 }
 
-.acheivement-section .overlay, .testimonial-section .overlay{
+.acheivement-section .overlay{
     position: absolute;
     content: '';
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: color-mix(in srgb, var(--sky-blue), transparent 40%);
+    background-color: color-mix(in srgb,var(--sky-blue),transparent 40%);
     z-index: -1;
 }
 
@@ -265,22 +258,20 @@ p,.p-font-size{
     font-weight: 600;
 }
 
-.acheivement-section .col-2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*imp! Section-7 (Portfolio Section) */
+/* imp! Section-7 (Portfolio Section) */
 
 .project-div .row{
     margin-bottom: 4rem;
 }
 
-/*imp! Section-8 (FAQ Section) */
+/* imp! Section-8 (FAQ Section) */
 
 .accordion-button{
     font-size: var(--p-font);
+}
+
+.accordion-button:focus{
+    box-shadow: none;
 }
 
 .accordion-button:hover{
@@ -292,14 +283,10 @@ p,.p-font-size{
     line-height: 2;
 }
 
-.accordion-button:focus{
-    box-shadow: none !important;
-}
-
-/*imp! Section-9 (Contact Section) */
+/* imp! Section-9 (Contact Section) */
 
 form{
-    box-shadow: 0px 0px 20px color-mix(in srgb, var(--grey), transparent 75%);
+    box-shadow: 0 0 2rem color-mix(in srgb, var(--grey),transparent 75%);
 }
 
 input,textarea,.submit-btn{
@@ -318,7 +305,7 @@ input,textarea,.submit-btn{
     padding: 1rem 3rem;
     background-color: var(--sky-blue);
     color: var(--pure-white);
-    opacity: 0.9;
+    opacity: 0.75;
     transition: 0.5s;
 }
 
@@ -333,7 +320,7 @@ input,textarea,.submit-btn{
     display: none;
 }
 
-/*imp! Section-10 (Footer Section) */
+/* imp!Section-10 (Footer Section) */
 
 .footer-section{
     background-color: var(--sky-blue);
@@ -349,15 +336,15 @@ input,textarea,.submit-btn{
 }
 
 .social-icons i{
+    color: var(--pure-white);
+    font-size: 1.8rem;
     width: 5rem;
     height: 5rem;
+    border: 0.1rem solid var(--pure-white);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.1rem solid var(--pure-white);
     border-radius: 100%;
-    font-size: 1.8rem;
-    color: var(--pure-white);
     cursor: pointer;
     opacity: 0.75;
     transition: 0.5s;
@@ -371,66 +358,59 @@ input,textarea,.submit-btn{
 
 /*imp! Tablet Screen */
 
-@media (max-width: 992px) {
-    /*imp! CSS Variable Declaration */
+@media (max-width: 992px){
+    /* imp! CSS Variable Declaration */
     :root{
         --h1-font: 5rem;
         --h2-font: 3rem;
     }
 
-    /*imp! Body And Common CSS */
+    /* imp! Body And Coomon CSS */
     .mt-100{
         margin-top: 8rem;
-    }
-    
-    .mb-60{
-        margin-bottom: 6rem;
-    }
-
-    /*imp! Navbar CSS */
-    .nav-link:hover::before,.nav-link.active::before{
-        visibility: hidden;
-    }
-}
-
-/*imp! Mobile Screen */
-
-@media (max-width: 600px) {
-    /*imp! CSS Variable Declaration */
-    :root{
-        --h1-font: 3.5rem;
-        --h2-font: 2.2rem;
-        --h3-font: 2rem;
-    }
-
-    /*imp! Body And Common CSS */
-    .mt-100{
-        margin-top: 7rem;
-    }
-
-    .mb-60{
-        margin-bottom: 0;
     }
 
     .mb-35{
         margin-bottom: 3.5rem;
     }
 
+    /* imp! Navbar CSS */
+
+    .nav-link:hover::before, .nav-line.active::before{
+        visibility: hidden;
+    }
+}
+
+/*imp! Mobile Screen */
+
+@media (max-width: 600px){
+    /* imp! CSS Variable Declaration */
+    :root{
+        --h1-font: 3.5rem;
+        --h2-font: 2.2rem;
+        --h3-font: 2rem;
+    }
+
+    /* imp! Body And Common CSS */
+    .mt-100{
+        margin-top: 7rem;
+    }
+
     .about-section{
         padding: 0;
     }
 
-    /*imp! Section-1 (Hero Section) */
+    /* imp! Section-1 (Hero Section) */
     .hero-section{
-        background-position-x: 0;
+        background-position-x: -10rem;
     }
 
-    /*imp! Section-5 (Achievements Section) */
+    /* imp! Section-5 (Achievements Section) */
     .acheivement-section{
         padding: 5rem;
     }
 
-    /*imp! Section-7 (FAQ Section) */
+    /* imp! Section-7 (FAQ Section) */
     .accordion-button{
         font-size: 1.4rem;
     }
@@ -439,7 +419,8 @@ input,textarea,.submit-btn{
         font-size: 1.2rem;
     }
 
-    /*imp! Section-9 (Footer Section) */
+    /* imp! Section-9 (Footer Section) */
+
     .footer-section{
         padding: 3rem;
     }
